@@ -1,0 +1,46 @@
+<html>
+<head>
+<style>
+.diff{overflow:auto;}
+.diff ul{background:#fff;overflow:auto;font-size:13px;list-style:none;margin:0;padding:0;display:table;width:100%;}
+.diff del, .diff ins{display:block;text-decoration:none;}
+.diff li{padding:0; display:table-row;margin: 0;height:1em;}
+.diff li.ins{background:#dfd; color:#080}
+.diff li.del{background:#fee; color:#b00}
+.diff li:hover{background:#ffc}
+/* try 'whitespace:pre;' if you don't want lines to wrap */
+.diff del, .diff ins, .diff span{white-space:pre-wrap;font-family:courier;}
+.diff del strong{font-weight:normal;background:#fcc;}
+.diff ins strong{font-weight:normal;background:#9f9;}
+.diff li.diff-comment { display: none; }
+.diff li.diff-block-info { background: none repeat scroll 0 0 gray; }
+.same { color: green }
+.different { color: red }
+ul.results { list-style:none; padding: 0 }
+.fetch_error { color:white; background:red }
+li.fetch_error { list-style:none }
+span.fetch_error { list-style:none }
+li.comp_result { list-style:none; border-top: thin solid black}
+.diff { overflow: visible }
+</style>
+</head>
+<body>
+<ul class="results">
+<li class="errors"><ul>
+</li></ul>
+<li class="comp_result"><ul>
+<li>URL: <a href="http://etherbob.com/">http://etherbob.com/</a></li>
+<li>Status:<span class="same">Body is same</span></li>
+</ul></li>
+<li class="comp_result"><ul>
+<li>URL: <a href="http://etherbob.com#this-is-a-test">http://etherbob.com#this-is-a-test</a></li>
+<li>Ref: <a href="http://etherbob.com/">http://etherbob.com/</a></li>
+<li>Status:<span class="same">Body is same</span></li>
+</ul></li>
+<li class="comp_result"><ul>
+<li>URL: <a href="http://etherbob.com#this-is-only-a-test">http://etherbob.com#this-is-only-a-test</a></li>
+<li>Ref: <a href="http://etherbob.com#this-is-a-test">http://etherbob.com#this-is-a-test</a></li>
+<li>Status:<span class="same">Body is same</span></li>
+</ul></li>
+</ul>
+</body></html>
