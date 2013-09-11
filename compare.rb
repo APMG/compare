@@ -2,6 +2,7 @@ require 'rubygems'
 require 'net/http'
 require 'uri'
 require 'digest'
+require 'anemone'
 require 'open-uri'
 require 'diffy'
 
