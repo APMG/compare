@@ -2,7 +2,6 @@ require 'rubygems'
 require 'net/http'
 require 'uri'
 require 'digest'
-require 'nokogiri'
 require 'open-uri'
 require 'diffy'
 
