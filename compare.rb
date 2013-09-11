@@ -20,10 +20,6 @@ $allowedDomain = ARGV[1];
 
 pages = [
   '/',
-#  '/fund/',
-#  '/workshops/',
-#  '/radio_partnerships/',
-#  '/production/',
 ]
 
 $results = {};
