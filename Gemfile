@@ -1,4 +1,4 @@
-source 'https://rubygems.org' 
-gem 'nokogiri'
+source 'https://rubygems.org'
+gem 'anemone'
 gem 'colorize'
 gem 'diffy'
