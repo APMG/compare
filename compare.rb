@@ -9,7 +9,7 @@ require 'diffy'
 
 unless ARGV[0] && ARGV[1]
   puts 'please enter two urls to spider'
-  puts 'ommit the http:// and trail /'
+  puts 'omit the http:// and trail /'
   puts 'example: ruby compare.rb mpr.org stage.mpr.org'
   exit
 end
