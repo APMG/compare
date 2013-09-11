@@ -48,7 +48,11 @@ Anemone.crawl(oldDomain) do |anemone|
     old_output_hash = Digest::MD5.hexdigest(old_page.body)
 
     # Get secondary page.
+    old_page.url
     new_url = newDomain + old_page.url.path
+    if old_page.url.query
+      new_url += '?' + old_page.url.query
+    end
     new_page = Net::HTTP.get_response(URI(new_url))
     new_output_hash = Digest::MD5.hexdigest(new_page.body)
 
