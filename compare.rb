@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'colorize'
 require 'net/http'
 require 'uri'
 require 'digest'
