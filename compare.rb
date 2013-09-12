@@ -16,7 +16,7 @@ end
 oldDomain = 'http://' + ARGV[0];
 newDomain = 'http://' + ARGV[1];
 
-fname = 'compare-' + ARGV[0] + '-to-' + ARGV[1] + '-' + Time.new.to_s + '.html'
+fname = 'compare-' + Time.new.to_s + '.html'
 
 out = File.open(fname, 'w')
 
