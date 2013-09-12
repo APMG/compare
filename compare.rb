@@ -43,6 +43,9 @@ out.puts '<body>'
 out.puts '<ul class="results">'
 
 Anemone.crawl(old_domain) do |anemone|
+
+  anemone.read_timeout = 40000
+
   anemone.on_every_page do |old_page|
     puts old_page.url
 
