@@ -17,7 +17,7 @@ end
 old_domain = ARGV[0];
 new_domain = ARGV[1];
 
-fname = 'output/compare-' + Time.new.to_s + '.html'
+fname = 'output/compare-' + URI::parse(new_domain).host + '-' + Time.new.to_s + '.html'
 
 out = File.open(fname, 'w')
 
