@@ -13,8 +13,8 @@ unless ARGV[0] && ARGV[1]
   exit
 end
 
-oldDomain = ARGV[0];
-newDomain = ARGV[1];
+old_domain = ARGV[0];
+new_domain = ARGV[1];
 
 fname = 'output/compare-' + Time.new.to_s + '.html'
 
@@ -41,7 +41,7 @@ out.puts '<body>'
 
 out.puts '<ul class="results">'
 
-Anemone.crawl(oldDomain) do |anemone|
+Anemone.crawl(old_domain) do |anemone|
   anemone.on_every_page do |old_page|
     puts old_page.url
 
@@ -49,7 +49,7 @@ Anemone.crawl(oldDomain) do |anemone|
 
     # Get secondary page.
     old_page.url
-    new_url = newDomain + old_page.url.path
+    new_url = new_domain + old_page.url.path
     if old_page.url.query
       new_url += '?' + old_page.url.query
     end
