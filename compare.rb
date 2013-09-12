@@ -8,7 +8,8 @@ require 'diffy'
 
 unless ARGV[0] && ARGV[1]
   puts 'Enter two URLs to spider and compare.'
-  puts 'The second URL will be spidered and compared to the same URL on the first site.'
+  puts 'The second site will be spidered and compared to the same URL on the first site.'
+  puts 'The spider will stay within the domain.'
   puts 'Example: ruby compare.rb http://mpr.org http://stage.mpr.org'
   exit
 end
