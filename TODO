@@ -1,0 +1,3 @@
+Figure out how to reduce memory usage. It sounds like Anemone will hold on to the body for the duration of the script execution. We need to figure out how to clear that once a page has been parsed.
+
+Allow for ignoring links with certain patterns.
