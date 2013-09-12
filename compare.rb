@@ -74,6 +74,9 @@ Anemone.crawl(old_domain) do |anemone|
     end
 
     out.puts '</ul></li>'
+
+    # Drop document to conserve memory.
+    old_page.discard_doc!
   end
 end
 
