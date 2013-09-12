@@ -59,11 +59,17 @@ Anemone.crawl(oldDomain) do |anemone|
     out.puts '<li class="comp_result"><ul>'
     out.puts '<li>URL: <a href="' + new_url + '">' + new_url +'</a></li>'
 
-    if new_output_hash == old_output_hash
-      out.puts '<li>Status: <span class="same">Body is same</span></li>'
+    if old_page.code.to_i == new_page.code.to_i
+      if new_output_hash == old_output_hash
+        out.puts '<li>Status: <span class="same">Body is same</span></li>'
+      else
+        out.puts '<li>Status: <span class="different">Body is different</span></li>'
+        out.puts '<li>Diff: ' + Diffy::Diff.new(old_page.body, new_page.body, :include_plus_and_minus_in_html => true, :context => 1, :include_diff_info => true).to_s(:html) + '</li>'
+      end
     else
-      out.puts '<li>Status: <span class="different">Body is different</span></li>'
-      out.puts '<li>Diff: ' + Diffy::Diff.new(old_page.body, new_page.body, :include_plus_and_minus_in_html => true, :context => 1, :include_diff_info => true).to_s(:html) + '</li>'
+      out.puts '<li>Status: <span class="different">Codes are different.</span></li>'
+      out.puts '<li>Old site: ' + old_page.code.to_s + '</li>'
+      out.puts '<li>New site: ' + new_page.code.to_s + '</li>'
     end
 
     out.puts '</ul></li>'
