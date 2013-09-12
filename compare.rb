@@ -7,14 +7,14 @@ require 'open-uri'
 require 'diffy'
 
 unless ARGV[0] && ARGV[1]
-  puts 'please enter two urls to spider'
-  puts 'omit the http:// and trailing /'
-  puts 'example: ruby compare.rb mpr.org stage.mpr.org'
+  puts 'Enter two URLs to spider and compare.'
+  puts 'The second URL will be spidered and compared to the same URL on the first site.'
+  puts 'Example: ruby compare.rb http://mpr.org http://stage.mpr.org'
   exit
 end
 
-oldDomain = 'http://' + ARGV[0];
-newDomain = 'http://' + ARGV[1];
+oldDomain = ARGV[0];
+newDomain = ARGV[1];
 
 fname = 'output/compare-' + Time.new.to_s + '.html'
 
