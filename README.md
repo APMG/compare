@@ -17,6 +17,11 @@ Example:
 
 	ruby compare.rb http://mpr.org http://stage.mpr.org
 
+Exceptions can be added with additional arguments. Example:
+
+	ruby compare.rb http://mpr.org http://stage.mpr.org test1 test2
+
+The previous example would spider `http://minnesota.publicradio.org/hello.shtml` but would skip `http://minnesota.publicradio.org/test1.shtml`
 
 Credits
 -------
