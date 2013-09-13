@@ -42,9 +42,7 @@ out.puts '<body>'
 
 out.puts '<ul class="results">'
 
-Anemone.crawl(old_domain) do |anemone|
-
-  anemone.read_timeout = 40000
+Anemone.crawl(old_domain, :read_timeout => 100000) do |anemone|
 
   anemone.on_every_page do |old_page|
     puts old_page.url
@@ -57,7 +55,16 @@ Anemone.crawl(old_domain) do |anemone|
     if old_page.url.query
       new_url += '?' + old_page.url.query
     end
-    new_page = Net::HTTP.get_response(URI(new_url))
+
+    uri = URI(new_url)
+    new_page = nil
+    Net::HTTP.start(uri.host, uri.port) do |http|
+      request = Net::HTTP::Get.new(uri)
+      http.read_timeout = 100000
+
+      new_page = http.request(request)
+    end
+
     new_output_hash = Digest::MD5.hexdigest(new_page.body)
 
     out.puts '<li class="comp_result"><ul>'
