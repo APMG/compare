@@ -44,6 +44,11 @@ out.puts '<ul class="results">'
 
 Anemone.crawl(old_domain, :read_timeout => 100000) do |anemone|
 
+  # Allow ignoring of stuff.
+  skips = ARGV[2..-1]
+  skips.map!{|skip| Regexp.new(skip)}
+  anemone.skip_links_like(*skips)
+
   anemone.on_every_page do |old_page|
     puts old_page.url
 
